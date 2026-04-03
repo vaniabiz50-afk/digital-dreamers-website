@@ -1,8 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-/* --- Button with hover scale + lift --- */
+/* --- Button with hover scale + lift (CSS only) --- */
 export function MotionButton({
   href,
   className,
@@ -17,21 +13,13 @@ export function MotionButton({
   rel?: string;
 }) {
   return (
-    <motion.a
-      href={href}
-      className={className}
-      target={target}
-      rel={rel}
-      whileHover={{ scale: 1.05, y: -2 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-    >
+    <a href={href} className={`${className ?? ""} motion-btn`} target={target} rel={rel}>
       {children}
-    </motion.a>
+    </a>
   );
 }
 
-/* --- Card with hover lift + glow --- */
+/* --- Card with hover lift + glow (CSS only) --- */
 export function MotionCard({
   className,
   children,
@@ -40,38 +28,18 @@ export function MotionCard({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div
-      className={className}
-      whileHover={{
-        y: -6,
-        boxShadow: "0 12px 40px rgba(91, 163, 230, 0.12)",
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
+    <div className={`${className ?? ""} motion-card`}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-/* --- Pulsing status dot --- */
+/* --- Pulsing status dot (CSS only) --- */
 export function PulsingDot() {
-  return (
-    <motion.span
-      className="hero-badge-dot"
-      animate={{
-        scale: [1, 1.6, 1],
-        opacity: [1, 0.4, 1],
-      }}
-      transition={{
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-  );
+  return <span className="hero-badge-dot" />;
 }
 
-/* --- Nav button with hover --- */
+/* --- Nav button with hover (CSS only) --- */
 export function MotionNavButton({
   href,
   className,
@@ -82,27 +50,17 @@ export function MotionNavButton({
   children: React.ReactNode;
 }) {
   return (
-    <motion.a
-      href={href}
-      className={className}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
-    >
+    <a href={href} className={`${className ?? ""} motion-btn`}>
       {children}
-    </motion.a>
+    </a>
   );
 }
 
-/* --- Stat counter with entrance --- */
+/* --- Stat counter (CSS only) --- */
 export function MotionStat({ children }: { children: React.ReactNode }) {
   return (
-    <motion.div
-      className="hero-stat"
-      whileHover={{ scale: 1.08 }}
-      transition={{ type: "spring", stiffness: 300, damping: 15 }}
-    >
+    <div className="hero-stat motion-stat">
       {children}
-    </motion.div>
+    </div>
   );
 }

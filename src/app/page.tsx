@@ -32,13 +32,14 @@ export default function HomePage() {
         <nav className="navbar">
           <div className="container navbar-inner">
             <a href="/" className="navbar-logo">
-              <Image src="/images/DD Logo.png" alt="Digital Dreamers" width={140} height={140} className="navbar-logo-img" />
+              <Image src="/images/dd-logo.webp" alt="Digital Dreamers" width={48} height={48} className="navbar-logo-img" priority sizes="48px" />
               Digital Dreamers
             </a>
             <div className="navbar-right">
               <a href="#services" className="nav-link">Services</a>
               <a href="#results" className="nav-link">Results</a>
               <a href="#how-it-works" className="nav-link">How It Works</a>
+              <a href="#about" className="nav-link">About</a>
               <MotionNavButton href="#book" className="btn btn-nav" >
                 Get Started
               </MotionNavButton>
@@ -86,8 +87,8 @@ export default function HomePage() {
 
           <div className="hero-stats">
             <MotionStat>
-              <div className="hero-stat-value">500+</div>
-              <div className="hero-stat-label">Businesses helped</div>
+              <div className="hero-stat-value">100+</div>
+              <div className="hero-stat-label">Workflows created</div>
             </MotionStat>
             <div className="hero-stat-divider" />
             <MotionStat>
@@ -310,6 +311,99 @@ export default function HomePage() {
 
         <div className="section-divider" />
 
+        {/* About Section */}
+        <section className="section about-section" id="about">
+          <div className="container">
+            {/* Top: intro text */}
+            <div className="about-intro">
+              <div className="section-label">About</div>
+              <h2>Digital Dreamers</h2>
+              <p>
+                At Digital Dreamers, your technology should be your greatest
+                accelerator, not a hidden constraint on your growth. We partner
+                with growth-focused entrepreneurs to strip away the noise of
+                manual operations and replace it with AI-powered precision.
+              </p>
+            </div>
+
+            {/* Image + 3 text blocks side by side */}
+            <div className="about-layout">
+              <div className="about-image-wrap">
+                <Image
+                  src="/images/humanoid-desk.webp"
+                  alt="AI-powered automation"
+                  width={800}
+                  height={600}
+                  className="about-image"
+                  loading="lazy"
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                />
+              </div>
+              <div className="about-copy">
+                <h3>Clarity Over Complexity</h3>
+                <p>
+                  We don&apos;t believe in bloated tech stacks or automation for
+                  the sake of automation. We design lean, high-impact systems with
+                  intelligent funnels and automated follow-up engines that
+                  integrate seamlessly into your existing workflow.
+                </p>
+
+                <h3>We Architect. We Manage. You Scale.</h3>
+                <p>
+                  You never have to worry about the &ldquo;tech&rdquo; becoming a
+                  burden. We don&apos;t just hand you a system and walk away. We
+                  provide ongoing strategic support to ensure your automation
+                  stays sharp, updated, and high-performing.
+                </p>
+
+                <h3>Total Peace of Mind.</h3>
+                <p>
+                  We take the heavy lifting off your shoulders so you can focus on
+                  leading, while we ensure your marketing, sales, and follow-ups
+                  work around the clock.
+                </p>
+              </div>
+            </div>
+
+            {/* Full-width focus card + closing */}
+            <div className="about-bottom">
+              <div className="about-focus-grid">
+                <div className="about-focus-item glass-card">
+                  <div className="about-focus-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                  </div>
+                  <h4>Eliminate the Manual</h4>
+                  <p>Reclaim your time from repetitive tasks and let AI handle the busywork so you can focus on strategy.</p>
+                </div>
+                <div className="about-focus-item glass-card">
+                  <div className="about-focus-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4>Master Speed-to-Lead</h4>
+                  <p>Ensure no prospect waits for a response. Instant follow-ups mean higher conversions and more closed deals.</p>
+                </div>
+                <div className="about-focus-item glass-card">
+                  <div className="about-focus-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                  </div>
+                  <h4>Architectural Excellence</h4>
+                  <p>Build systems you understand, own, and can scale with total confidence. No black boxes, no lock-in.</p>
+                </div>
+              </div>
+              <p className="about-closing">
+                Digital Dreamers exists for leaders who are ready to operate at
+                the next level. The busywork ends here.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA with Globe */}
         <section className="cta-banner">
           <GlobeScene />
@@ -326,11 +420,8 @@ export default function HomePage() {
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </MotionButton>
-            <p className="hero-guarantee">Limited to 10 audits per month.</p>
           </div>
         </section>
-
-        <div className="section-divider" />
 
         {/* Booking Section */}
         <section className="section booking-section" id="book">
@@ -344,7 +435,6 @@ export default function HomePage() {
                 killers and exactly how to automate them, even if we never
                 work together.
               </p>
-              <p className="hero-guarantee">Limited to 10 audits per month.</p>
             </div>
             <BookingForm />
           </div>
@@ -354,7 +444,7 @@ export default function HomePage() {
         <footer className="footer">
           <div className="container footer-inner">
             <div className="footer-logo">
-              <Image src="/images/DD Logo.png" alt="Digital Dreamers" width={120} height={120} className="footer-logo-img" />
+              <Image src="/images/dd-logo.webp" alt="Digital Dreamers" width={42} height={42} className="footer-logo-img" loading="lazy" sizes="42px" />
               Digital Dreamers
             </div>
             <div className="footer-links">
