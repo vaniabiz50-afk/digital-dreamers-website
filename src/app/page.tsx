@@ -3,13 +3,6 @@ import { GsapProvider } from "@/components/gsap-provider";
 import { SplineHero } from "@/components/spline-hero";
 import { GlobeScene } from "@/components/globe-scene";
 import { BookingForm } from "@/components/booking-form";
-import {
-  MotionButton,
-  MotionCard,
-  MotionNavButton,
-  MotionStat,
-  PulsingDot,
-} from "@/components/motion-elements";
 
 export default function HomePage() {
   return (
@@ -18,13 +11,7 @@ export default function HomePage() {
       <div className="page-bg">
         <div className="glow-orb glow-purple" />
         <div className="glow-orb glow-blue" />
-        <div className="glow-orb glow-pink" />
-        <div className="glow-orb glow-teal" />
-        <div className="glow-orb glow-purple-mid" />
       </div>
-
-      {/* Noise Texture Overlay */}
-      <div className="noise-overlay" />
 
       {/* Page Content */}
       <div className="page-content">
@@ -40,29 +27,27 @@ export default function HomePage() {
               <a href="#results" className="nav-link">Results</a>
               <a href="#how-it-works" className="nav-link">How It Works</a>
               <a href="#about" className="nav-link">About</a>
-              <MotionNavButton href="#book" className="btn btn-nav" >
+              <a href="#book" className="btn btn-nav motion-btn">
                 Get Started
-              </MotionNavButton>
+              </a>
             </div>
           </div>
         </nav>
 
         {/* Hero */}
         <section className="hero">
-          {/* Spline 3D background */}
           <SplineHero />
 
           <div className="hero-bg">
             <div className="hero-glow" />
-            <div className="hero-glow-2" />
           </div>
 
-          <div className="hero-badge">
-            <PulsingDot />
+          <div className="hero-badge hero-anim hero-anim-1">
+            <span className="hero-badge-dot" />
             For businesses making $20K+/month
           </div>
 
-          <h1>
+          <h1 className="hero-anim hero-anim-2">
             Your competitors
             <br />
             are using AI.
@@ -70,43 +55,43 @@ export default function HomePage() {
             <span className="gradient-text">It&apos;s time to start too.</span>
           </h1>
 
-          <p className="hero-sub">
+          <p className="hero-sub hero-anim hero-anim-3">
             In a free 30-minute call, we&apos;ll map your top 2 time killers,
             show you exactly how to automate them, and hand you a custom AI
             roadmap, even if we never work together.
           </p>
 
-          <div className="hero-cta">
-            <MotionButton href="https://links.salesfunnels.io/widget/booking/lQAckjUX4wGvMGmKHo9R" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <div className="hero-cta hero-anim hero-anim-4">
+            <a href="https://links.salesfunnels.io/widget/booking/lQAckjUX4wGvMGmKHo9R" target="_blank" rel="noopener noreferrer" className="btn btn-primary motion-btn">
               Book Your Free Audit
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </MotionButton>
+            </a>
           </div>
 
-          <div className="hero-stats">
-            <MotionStat>
+          <div className="hero-stats hero-anim hero-anim-5">
+            <div className="hero-stat motion-stat">
               <div className="hero-stat-value">100+</div>
               <div className="hero-stat-label">Workflows created</div>
-            </MotionStat>
+            </div>
             <div className="hero-stat-divider" />
-            <MotionStat>
+            <div className="hero-stat motion-stat">
               <div className="hero-stat-value">10,000+</div>
               <div className="hero-stat-label">Hours saved monthly</div>
-            </MotionStat>
+            </div>
             <div className="hero-stat-divider" />
-            <MotionStat>
+            <div className="hero-stat motion-stat">
               <div className="hero-stat-value">3x</div>
               <div className="hero-stat-label">Average ROI</div>
-            </MotionStat>
+            </div>
           </div>
         </section>
 
         <div className="section-divider" />
 
         {/* Testimonials */}
-        <section className="section" id="results">
+        <section className="section animate-on-scroll" id="results">
           <div className="container">
             <div className="section-header">
               <div className="section-label">Real Results</div>
@@ -119,7 +104,7 @@ export default function HomePage() {
             </div>
 
             <div className="testimonials-grid">
-              <MotionCard className="testimonial-card glass-card">
+              <div className="testimonial-card glass-card motion-card">
                 <p className="testimonial-quote">
                   &ldquo;Digital Dreamers built us an automation system that saves
                   <strong> over 20 hours of work a month</strong>. What used to
@@ -132,9 +117,9 @@ export default function HomePage() {
                     <div className="testimonial-role">Psychotherapy Clinic Owner</div>
                   </div>
                 </div>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="testimonial-card glass-card">
+              <div className="testimonial-card glass-card motion-card">
                 <p className="testimonial-quote">
                   &ldquo;From cold lead to booked call, the entire flow is
                   automated now. Our <strong>close rate went up 40%</strong>{" "}
@@ -147,9 +132,9 @@ export default function HomePage() {
                     <div className="testimonial-role">Roofing Company, CEO</div>
                   </div>
                 </div>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="testimonial-card glass-card">
+              <div className="testimonial-card glass-card motion-card">
                 <p className="testimonial-quote">
                   &ldquo;I was skeptical about AI automation, but they made it
                   simple. We <strong>closed $75K in new revenue</strong> in the
@@ -162,7 +147,7 @@ export default function HomePage() {
                     <div className="testimonial-role">Marketing Agency Founder</div>
                   </div>
                 </div>
-              </MotionCard>
+              </div>
             </div>
           </div>
         </section>
@@ -170,7 +155,7 @@ export default function HomePage() {
         <div className="section-divider" />
 
         {/* What We Automate */}
-        <section className="section" id="services">
+        <section className="section animate-on-scroll" id="services">
           <div className="container">
             <div className="section-header">
               <div className="section-label">What We Automate</div>
@@ -182,7 +167,7 @@ export default function HomePage() {
             </div>
 
             <div className="services-grid">
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
@@ -193,9 +178,9 @@ export default function HomePage() {
                   Automatically capture leads from ads, forms, and social then
                   follow up via email and SMS within minutes, not hours.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 20V10M6 20V4M18 20v-4" />
@@ -206,9 +191,9 @@ export default function HomePage() {
                   Deals move through your pipeline automatically. No more manual
                   status updates, missed follow-ups, or data entry.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
@@ -219,9 +204,9 @@ export default function HomePage() {
                   24/7 customer support and lead qualification powered by AI
                   that sounds human and knows your business.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -232,9 +217,9 @@ export default function HomePage() {
                   Connect your tools like CRM, calendar, invoicing, and email so
                   data flows between them without anyone lifting a finger.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -246,9 +231,9 @@ export default function HomePage() {
                   High-converting pages wired to your CRM and ad campaigns.
                   Every click tracked, every lead captured.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="service-card glass-card">
+              <div className="service-card glass-card motion-card">
                 <div className="service-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -260,7 +245,7 @@ export default function HomePage() {
                   Nurture campaigns that run themselves with personalized messages
                   at the right time, driving conversions on autopilot.
                 </p>
-              </MotionCard>
+              </div>
             </div>
           </div>
         </section>
@@ -268,7 +253,7 @@ export default function HomePage() {
         <div className="section-divider" />
 
         {/* How It Works */}
-        <section className="section" id="how-it-works">
+        <section className="section animate-on-scroll" id="how-it-works">
           <div className="container">
             <div className="section-header">
               <div className="section-label">How It Works</div>
@@ -279,32 +264,32 @@ export default function HomePage() {
             </div>
 
             <div className="steps-grid">
-              <MotionCard className="step-card glass-card">
+              <div className="step-card glass-card motion-card">
                 <div className="step-number">1</div>
                 <h3>Free Audit Call</h3>
                 <p>
                   We learn your business, map your processes, and identify the
                   top 2 things costing you the most time and money.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="step-card glass-card">
+              <div className="step-card glass-card motion-card">
                 <div className="step-number">2</div>
                 <h3>We Build It</h3>
                 <p>
                   We design and implement your custom AI automation system,
                   tested and refined until it works flawlessly.
                 </p>
-              </MotionCard>
+              </div>
 
-              <MotionCard className="step-card glass-card">
+              <div className="step-card glass-card motion-card">
                 <div className="step-number">3</div>
                 <h3>Launch &amp; Train</h3>
                 <p>
                   We go live together, train your team on everything, and make
                   sure you can run it without us.
                 </p>
-              </MotionCard>
+              </div>
             </div>
           </div>
         </section>
@@ -312,9 +297,8 @@ export default function HomePage() {
         <div className="section-divider" />
 
         {/* About Section */}
-        <section className="section about-section" id="about">
+        <section className="section about-section animate-on-scroll" id="about">
           <div className="container">
-            {/* Top: intro text */}
             <div className="about-intro">
               <div className="section-label">About</div>
               <h2>Digital Dreamers</h2>
@@ -326,7 +310,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Image + 3 text blocks side by side */}
             <div className="about-layout">
               <div className="about-image-wrap">
                 <Image
@@ -365,7 +348,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Full-width focus card + closing */}
             <div className="about-bottom">
               <div className="about-focus-grid">
                 <div className="about-focus-item glass-card">
@@ -405,7 +387,7 @@ export default function HomePage() {
         </section>
 
         {/* Final CTA with Globe */}
-        <section className="cta-banner">
+        <section className="cta-banner animate-on-scroll">
           <GlobeScene />
           <div className="container cta-content">
             <h2>Ready to automate?</h2>
@@ -414,17 +396,17 @@ export default function HomePage() {
               automation can save you time and money. You keep the roadmap
               either way.
             </p>
-            <MotionButton href="#book" className="btn btn-primary">
+            <a href="#book" className="btn btn-primary motion-btn">
               Book Your Free Audit
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </MotionButton>
+            </a>
           </div>
         </section>
 
         {/* Booking Section */}
-        <section className="section booking-section" id="book">
+        <section className="section booking-section animate-on-scroll" id="book">
           <GlobeScene />
           <div className="container booking-layout">
             <div className="booking-copy">

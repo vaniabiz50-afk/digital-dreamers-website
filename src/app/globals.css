@@ -1,6 +1,6 @@
 /* ========================================
    Digital Dreamers AI — Global Styles
-   Dark theme, plain CSS, automatable.co inspired
+   Dark theme, performance-optimized
    ======================================== */
 
 /* --- Reset & Base --- */
@@ -15,9 +15,8 @@
 :root {
   --bg-primary: #0b0f1a;
   --bg-secondary: #0f1322;
-  --bg-card: rgba(20, 24, 41, 0.55);
-  --bg-card-hover: rgba(26, 31, 53, 0.65);
-  --bg-card-solid: #141829;
+  --bg-card: rgba(20, 24, 41, 0.7);
+  --bg-card-hover: rgba(26, 31, 53, 0.8);
   --text-primary: #ffffff;
   --text-secondary: #b4b9cf;
   --text-muted: #8c92b3;
@@ -26,7 +25,6 @@
   --accent-glow: rgba(91, 163, 230, 0.15);
   --accent-glow-strong: rgba(91, 163, 230, 0.25);
   --orange: #e8753a;
-  --orange-light: #f09a5e;
   --border: rgba(28, 32, 56, 0.6);
   --border-light: rgba(40, 45, 72, 0.7);
   --radius: 12px;
@@ -38,24 +36,21 @@
     "Segoe UI", Roboto, sans-serif;
   --max-width: 1100px;
   --transition: 0.25s ease;
-  --blur-card: blur(24px);
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 400;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.8;
   min-height: 100vh;
   overflow-x: hidden;
-  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -74,7 +69,7 @@ img {
   max-width: 100%;
 }
 
-/* --- Ambient Background Glows --- */
+/* --- Ambient Background Glows (2 only) --- */
 .page-bg {
   position: fixed;
   top: 0;
@@ -90,7 +85,7 @@ img {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.12;
   will-change: transform;
   transform: translateZ(0);
 }
@@ -106,52 +101,9 @@ img {
 .glow-blue {
   width: 450px;
   height: 450px;
-  top: 35%;
+  top: 40%;
   right: -8%;
   background: radial-gradient(circle, #3d7ec7 0%, transparent 70%);
-  opacity: 0.1;
-}
-
-.glow-pink {
-  width: 400px;
-  height: 400px;
-  bottom: 15%;
-  left: -5%;
-  background: radial-gradient(circle, #7ec8e3 0%, transparent 70%);
-  opacity: 0.1;
-}
-
-.glow-teal {
-  width: 350px;
-  height: 350px;
-  bottom: -5%;
-  right: 15%;
-  background: radial-gradient(circle, #5fb8d4 0%, transparent 70%);
-  opacity: 0.08;
-}
-
-.glow-purple-mid {
-  width: 300px;
-  height: 300px;
-  top: 60%;
-  left: 30%;
-  background: radial-gradient(circle, #4a9ad4 0%, transparent 70%);
-  opacity: 0.06;
-}
-
-/* --- Noise Overlay --- */
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
 }
 
 /* --- Page Content (above bg) --- */
@@ -175,9 +127,7 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(11, 15, 26, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(11, 15, 26, 0.85);
   border-bottom: 1px solid var(--border);
 }
 
@@ -249,8 +199,7 @@ img {
 
 .btn-primary:hover {
   background: var(--accent-light);
-  box-shadow: 0 0 40px var(--accent-glow-strong),
-    0 0 80px rgba(91, 163, 230, 0.1);
+  box-shadow: 0 0 40px var(--accent-glow-strong);
 }
 
 .navbar-right a.btn-nav,
@@ -261,7 +210,6 @@ img {
   color: #ffffff;
   font-weight: 600;
   border-radius: var(--radius-sm);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-right a.btn-nav:hover,
@@ -281,28 +229,18 @@ img {
   pointer-events: none;
 }
 
-.spline-hero-wrap canvas,
-.spline-hero-wrap > div {
-  width: 100% !important;
-  height: 100% !important;
-}
-
 .spline-fade {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40%;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--bg-primary) 100%
-  );
+  background: linear-gradient(to bottom, transparent 0%, var(--bg-primary) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* --- Three.js Globe (CTA section) --- */
+/* --- Globe (CTA section) --- */
 .globe-container {
   position: absolute;
   top: 0;
@@ -311,10 +249,6 @@ img {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-}
-
-.globe-container canvas {
-  display: block;
 }
 
 .cta-content {
@@ -334,7 +268,6 @@ img {
   min-height: 100vh;
 }
 
-/* Gradient transition between hero fold and next section */
 .hero::after {
   content: "";
   position: absolute;
@@ -377,26 +310,8 @@ img {
     transparent 70%
   );
   filter: blur(60px);
-  opacity: 0.35;
-  transform: rotate(-15deg) translateZ(0);
-  will-change: transform;
-}
-
-.hero-glow-2 {
-  position: absolute;
-  top: 30%;
-  right: 15%;
-  width: 300px;
-  height: 400px;
-  background: linear-gradient(
-    145deg,
-    rgba(240, 154, 94, 0.6) 0%,
-    transparent 60%
-  );
-  filter: blur(40px);
   opacity: 0.3;
-  transform: rotate(-20deg) translateZ(0);
-  will-change: transform;
+  transform: rotate(-15deg) translateZ(0);
 }
 
 .hero-badge {
@@ -408,8 +323,7 @@ img {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--text-secondary);
-  background: rgba(20, 24, 41, 0.5);
-  backdrop-filter: var(--blur-card);
+  background: rgba(20, 24, 41, 0.7);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-full);
   margin-bottom: 44px;
@@ -452,14 +366,6 @@ img {
   z-index: 3;
 }
 
-.hero-guarantee {
-  margin-top: 16px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  position: relative;
-  z-index: 3;
-}
-
 .hero-stats {
   display: flex;
   align-items: center;
@@ -482,7 +388,7 @@ img {
 
 .hero-stat-label {
   font-size: 0.78rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-muted);
   margin-top: 4px;
   letter-spacing: 0.02em;
@@ -492,6 +398,25 @@ img {
   width: 1px;
   height: 40px;
   background: var(--border-light);
+}
+
+/* --- Hero Entrance Animations --- */
+.hero-anim {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.hero-anim-1 { animation: heroFadeIn 0.6s 0.1s ease-out forwards; }
+.hero-anim-2 { animation: heroFadeIn 0.8s 0.2s ease-out forwards; }
+.hero-anim-3 { animation: heroFadeIn 0.6s 0.4s ease-out forwards; }
+.hero-anim-4 { animation: heroFadeIn 0.5s 0.6s ease-out forwards; }
+.hero-anim-5 { animation: heroFadeIn 0.6s 0.7s ease-out forwards; }
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- Section Shared --- */
@@ -541,11 +466,19 @@ img {
   line-height: 1.8;
 }
 
-/* --- GSAP Animation Base States ---
-   GSAP sets initial opacity via JS. No CSS opacity:0 to avoid
-   invisible content when JS is delayed on slow connections. */
+/* --- Scroll Animation --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
 
-/* --- Pulsing Dot (Framer Motion target) --- */
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Pulsing Dot --- */
 .hero-badge-dot {
   display: inline-block;
   width: 7px;
@@ -553,12 +486,17 @@ img {
   background: var(--accent);
   border-radius: 50%;
   flex-shrink: 0;
+  animation: pulsingDot 2s ease-in-out infinite;
 }
 
-/* --- Glass Card Base --- */
+@keyframes pulsingDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.4; }
+}
+
+/* --- Glass Card Base (no backdrop-filter) --- */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: var(--blur-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   transition: background var(--transition), border-color var(--transition),
@@ -608,7 +546,6 @@ img {
   height: 40px;
   border-radius: 50%;
   background: var(--accent-glow);
-  backdrop-filter: var(--blur-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -667,7 +604,7 @@ img {
   line-height: 1.8;
 }
 
-/* --- Services / What We Automate --- */
+/* --- Services --- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -737,10 +674,6 @@ img {
   line-height: 1.8;
 }
 
-.cta-banner .hero-guarantee {
-  margin-top: 14px;
-}
-
 /* --- Booking Section --- */
 .booking-section {
   position: relative;
@@ -785,14 +718,8 @@ img {
   max-width: 460px;
 }
 
-.booking-copy .hero-guarantee {
-  margin-top: 24px;
-}
-
 .booking-form-wrap {
   background: var(--bg-card);
-  backdrop-filter: var(--blur-card);
-  -webkit-backdrop-filter: var(--blur-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 32px;
@@ -913,23 +840,6 @@ img {
   background: transparent;
 }
 
-@media (max-width: 900px) {
-  .booking-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 640px) {
-  .booking-row {
-    grid-template-columns: 1fr;
-  }
-
-  .booking-form-wrap {
-    padding: 24px 20px;
-  }
-}
-
 /* --- About Section --- */
 .about-section {
   padding-bottom: 40px;
@@ -998,7 +908,6 @@ img {
   font-size: 0.98rem;
 }
 
-/* Full-width bottom area */
 .about-bottom {
   text-align: center;
 }
@@ -1054,30 +963,6 @@ img {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
-}
-
-@media (max-width: 900px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-image-wrap {
-    max-width: 500px;
-  }
-
-  .about-focus-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .about-intro h2 {
-    font-size: 1.8rem;
-  }
 }
 
 /* --- Footer --- */
@@ -1155,6 +1040,27 @@ img {
   .hero-stats {
     gap: 32px;
   }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image-wrap {
+    max-width: 500px;
+  }
+
+  .about-focus-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1185,9 +1091,21 @@ img {
     gap: 24px;
     text-align: center;
   }
+
+  .about-intro h2 {
+    font-size: 1.8rem;
+  }
+
+  .booking-row {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form-wrap {
+    padding: 24px 20px;
+  }
 }
 
-/* --- Hero Mesh Grid (Spline replacement) --- */
+/* --- Hero Mesh Grid --- */
 .hero-mesh-grid {
   position: absolute;
   top: 0;
@@ -1208,7 +1126,7 @@ img {
   100% { transform: translate(60px, 60px); }
 }
 
-/* --- CSS Globe (Three.js replacement) --- */
+/* --- CSS Globe --- */
 .css-globe {
   position: absolute;
   top: 50%;
@@ -1224,8 +1142,8 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(91, 163, 230, 0.15);
   background: radial-gradient(circle at 30% 30%, rgba(91, 163, 230, 0.08), transparent 60%);
-  animation: globeSpin 30s linear infinite;
-  box-shadow: 0 0 60px rgba(91, 163, 230, 0.08), inset 0 0 40px rgba(91, 163, 230, 0.04);
+  animation: globeSphereSpin 30s linear infinite;
+  box-shadow: 0 0 60px rgba(91, 163, 230, 0.08);
 }
 
 .css-globe-ring {
@@ -1253,16 +1171,12 @@ img {
   100% { transform: translate(-50%, -50%) rotateX(75deg) rotateZ(15deg) rotateY(360deg); }
 }
 
-.css-globe-sphere {
-  animation-name: globeSphereSpin;
-}
-
 @keyframes globeSphereSpin {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(360deg); }
 }
 
-/* --- Motion Element CSS Replacements --- */
+/* --- Motion Element CSS --- */
 .motion-btn {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1290,20 +1204,4 @@ img {
 
 .motion-stat:hover {
   transform: scale(1.08);
-}
-
-/* --- Pulsing Dot (CSS animation) --- */
-.hero-badge-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: var(--accent);
-  border-radius: 50%;
-  flex-shrink: 0;
-  animation: pulsingDot 2s ease-in-out infinite;
-}
-
-@keyframes pulsingDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.6); opacity: 0.4; }
 }
